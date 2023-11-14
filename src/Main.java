@@ -32,5 +32,6 @@ public class Main {
         selectSave();
         System.out.println(player);
         saveGame();
+        player.apply();
     }
 }

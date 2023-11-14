@@ -3,11 +3,14 @@ package src.Entities;
 import java.io.Serializable;
 
 import src.MafLib;
+import src.Professions.Job;
 
 public class Player extends Entity implements Serializable{
     int StatPoints = 3;
     public String Subject = "they";
     public String Object = "them";
+    public double Cash = 0.0;
+    public Job Profession = Job.Unemployed;
 
     public Player(){
         Name = "Dummy";
@@ -52,33 +55,42 @@ public class Player extends Entity implements Serializable{
             }
         }
     }
-
-    public String Name(){
-        return Name;
-    }
-
-    public int Strength(){
-        return Strength;
-    }
-
-    public int Intelligence(){
-        return Intelligence;
-    }
-
-    public int Charisma(){
-        return Charisma;
-    }
-
-    public String Subject(){
-        return Subject;
-    }
-
-    public String Object(){
-        return Object;
-    }
-    @Override
     public String toString(){
         String s = ("Name:" + Name + "\nStrength: " + Strength + " | Intelligence: " + Intelligence + " | Charisma: " + Charisma);
         return s;
+    }
+    public String getName(){
+        return Name;
+    }
+    public int getStrength(){
+        return Strength;
+    }
+    public int getIntelligence(){
+        return Intelligence;
+    }
+    public int getCharisma(){
+        return Charisma;
+    }
+    public String getSubject(){
+        return Subject;
+    }
+    public String getObject(){
+        return Object;
+    }
+
+    public void apply(){
+        System.out.println("What job would you like to apply for?\n1. Bank Security Guard\n2. Librarian\n3. Tech Salesperon\n4. ✨Unemployed✨");
+        // if(Strength <= j.StrengthReq()){
+        //     if(Intelligence <= j.IntelligenceReq()){
+        //         if(Charisma <= j.CharismaReq()){
+        //             Profession = j;
+        //             System.out.println("Good job! You now have a job as a " + j.Name());
+        //         }
+        //     }
+        // }
+        // else{
+        //     System.out.println("Ooops, you lack the Strength for this job! Choose another one!");
+
+        // }
     }
 }

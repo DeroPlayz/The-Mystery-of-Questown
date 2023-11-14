@@ -16,13 +16,12 @@ public class SaveSystem implements Serializable {
     public static void saveGame(){
         Player saveData = Main.player;
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(save))) {
-            //out.writeObject(saveData);
-            out.writeObject(saveData.Name());
-            out.writeObject(saveData.Subject());
-            out.writeObject(saveData.Object());
-            out.writeObject(saveData.Strength());
-            out.writeObject(saveData.Intelligence());
-            out.writeObject(saveData.Charisma());
+            out.writeObject(saveData.getName());
+            out.writeObject(saveData.getSubject());
+            out.writeObject(saveData.getObject());
+            out.writeObject(saveData.getStrength());
+            out.writeObject(saveData.getIntelligence());
+            out.writeObject(saveData.getCharisma());
         } catch (IOException e) {
             e.printStackTrace();
         }
