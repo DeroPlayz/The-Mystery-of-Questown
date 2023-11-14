@@ -38,7 +38,7 @@ public class SaveSystem implements Serializable {
             saveData.Intelligence = (int) in.readObject();
             saveData.Charisma = (int) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            saveData = new Player(MafLib.askString("Error. Corrupted save. Initializing new save.\nWhat is this young adventurer's name? ", false), MafLib.askString("What is this young adventurer's subjective pronoun? (The \"he\" in he/him) ", false), MafLib.askString("What is this young adventurer's objective pronoun? (The \"him\" in he/him) ", false));
         }
         return saveData;
     }

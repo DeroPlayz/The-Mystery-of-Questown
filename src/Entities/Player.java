@@ -78,7 +78,7 @@ public class Player extends Entity implements Serializable{
     }
     @Override
     public String toString(){
-        String s = ("Name:" + Name + "\nStrength: " + Strength + " | Intelligence: " + Intelligence + " | Charisma: " + Charisma + "\n");
+        String s = ("Name:" + Name + "\nStrength: " + Strength + " | Intelligence: " + Intelligence + " | Charisma: " + Charisma);
         return s;
     }
 }
