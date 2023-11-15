@@ -14,7 +14,7 @@ public class Job {
         this.CharismaReq = CharismaReq;
     }
 
-    public String Name(){
+    public String getName(){
         return Name;
     }
     public int StrengthReq(){
@@ -27,6 +27,10 @@ public class Job {
         return CharismaReq;
     }
 
+    public String toString(){
+        String s = getName() + "\nStrength Required: " + StrengthReq() + "\nIntelligence Required: " + IntelligenceReq() + "\nCharisma Required: " + CharismaReq();
+        return s;
+    }
     public static Job Unemployed = new Job("Unemployed", 0, 0, 0);
     public static Job BankSecurity = new Job("Bank Security Guard", 3, 0, 0);
     public static Job Librarian = new Job("Unemployed", 0, 3, 0);

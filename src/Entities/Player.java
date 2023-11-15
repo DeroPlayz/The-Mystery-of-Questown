@@ -56,7 +56,7 @@ public class Player extends Entity implements Serializable{
         }
     }
     public String toString(){
-        String s = ("Name:" + Name + "\nStrength: " + Strength + " | Intelligence: " + Intelligence + " | Charisma: " + Charisma);
+        String s = ("Name: " + Name + "\nStrength: " + Strength + " | Intelligence: " + Intelligence + " | Charisma: " + Charisma);
         return s;
     }
     public String getName(){
@@ -79,18 +79,42 @@ public class Player extends Entity implements Serializable{
     }
 
     public void apply(){
-        System.out.println("What job would you like to apply for?\n1. Bank Security Guard\n2. Librarian\n3. Tech Salesperon\n4. ✨Unemployed✨");
-        // if(Strength <= j.StrengthReq()){
-        //     if(Intelligence <= j.IntelligenceReq()){
-        //         if(Charisma <= j.CharismaReq()){
-        //             Profession = j;
-        //             System.out.println("Good job! You now have a job as a " + j.Name());
-        //         }
-        //     }
-        // }
-        // else{
-        //     System.out.println("Ooops, you lack the Strength for this job! Choose another one!");
+        int resp = MafLib.askInt("What job would you like to apply for?\n1. Bank Security Guard\n2. Librarian\n3. Tech Salesperon\n4. Unemployed", true);
+        Job j;
+        System.out.println(resp == 1);         
+        if(resp == 1){
+            j = Job.BankSecurity;
+        }
+        else if(resp == 2){
+            j = Job.Librarian;
+        }
+        else if(resp == 3){
+            j = Job.Salesman;
+        }
+        else{
+            j = Job.Unemployed;
+        }
+        System.out.println(j);
 
-        // }
+        if(Strength >= j.StrengthReq()){
+            if(Intelligence >= j.IntelligenceReq()){
+                if(Charisma >= j.CharismaReq()){
+                    Profession = j;
+                    System.out.println("Good job! You now have a job as a " + j.getName());
+                }
+                else{
+                    System.out.println("Oops, you lack the Magic for this job! Choose another one!");
+        
+                }
+            }
+            else{
+                System.out.println("Oops, you lack the Intelligence for this job! Choose another one!");
+    
+            }
+        }
+        else{
+            System.out.println("Oops, you lack the Strength for this job! Choose another one!");
+
+        }
     }
 }

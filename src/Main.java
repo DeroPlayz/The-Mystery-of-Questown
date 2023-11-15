@@ -2,13 +2,13 @@ package src;
 
 import static src.SaveSystem.loadGame;
 import static src.SaveSystem.saveGame;
-
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import src.Entities.Player;
 
 public class Main {
+    public static int Day = 0;
     public static Player player;
     static String answer;
     private static void selectSave(){
@@ -33,5 +33,7 @@ public class Main {
         System.out.println(player);
         saveGame();
         player.apply();
+        Day += 1;
+        saveGame();
     }
 }
