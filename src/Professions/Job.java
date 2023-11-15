@@ -2,7 +2,7 @@ package src.Professions;
 
 public class Job {
     public String Name;
-
+s
     public Job(String Name){
         this.Name = Name;
     }
