@@ -10,7 +10,7 @@ public class Player extends Entity implements Serializable{
     public String Subject = "they";
     public String Object = "them";
     public double Cash = 0.0;
-    public Job Profession = Job.Unemployed;
+    public Job Profession;
 
     public Player(){
         Name = "Dummy";
@@ -80,41 +80,19 @@ public class Player extends Entity implements Serializable{
 
     public void apply(){
         int resp = MafLib.askInt("What job would you like to apply for?\n1. Bank Security Guard\n2. Librarian\n3. Tech Salesperon\n4. Unemployed", true);
-        Job j;
         System.out.println(resp == 1);         
         if(resp == 1){
-            j = Job.BankSecurity;
+            Profession = Job.BankSecurity;
         }
         else if(resp == 2){
-            j = Job.Librarian;
+            Profession = Job.Librarian;
         }
         else if(resp == 3){
-            j = Job.Salesman;
+            Profession = Job.Salesman;
         }
-        else{
-            j = Job.Unemployed;
+        else if(resp == 4){
+            Profession = Job.Cashier;
         }
-        System.out.println(j);
-
-        if(Strength >= j.StrengthReq()){
-            if(Intelligence >= j.IntelligenceReq()){
-                if(Charisma >= j.CharismaReq()){
-                    Profession = j;
-                    System.out.println("Good job! You now have a job as a " + j.getName());
-                }
-                else{
-                    System.out.println("Oops, you lack the Magic for this job! Choose another one!");
         
-                }
-            }
-            else{
-                System.out.println("Oops, you lack the Intelligence for this job! Choose another one!");
-    
-            }
-        }
-        else{
-            System.out.println("Oops, you lack the Strength for this job! Choose another one!");
-
-        }
     }
 }

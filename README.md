@@ -9,11 +9,4 @@ But, you notice some stuff is… off. People disappear, things you've never hear
 
 Do you have the brains to figure out the Mystery of Questown?
 # Chapter 1
-Once you’ve chosen your stats, you finally arrive, where you choose a job. Jobs aren’t mandatory, but highly reccomended.<br>
-```
-Job Name         |   Rate   | Str | Int | Cha |
-Unemployed       |  $00.00  |  0  |  0  |  0  |
-Bank Security    |  $20.55  |  3  |  0  |  0  |
-Librarian        |  $37.29  |  0  |  3  |  0  |
-Tech Salesperson |  $18.00  |  0  |  2  |  2  |
-```
+Once you’ve chosen your stats, you finally arrive, where you choose a job. This will highly impact your story.
